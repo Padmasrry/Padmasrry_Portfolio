@@ -1,0 +1,31 @@
+.contact-section {
+    padding: 50px;
+    background: #3d5a80;
+    color: #e0fbfc;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    background: #293241;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    color: #ee6c4d;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: #e0fbfc;
+}

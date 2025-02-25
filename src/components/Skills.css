@@ -1,0 +1,210 @@
+/* Skills.css */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* White text */
+  font-family: Arial, sans-serif;
+  display: flex;
+  min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.skills-page {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+/* Buttons Container */
+.buttons-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px;
+  z-index: 1000; /* Ensure the buttons are above other elements */
+}
+
+.home-button, .contact-button {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ff00ff, #00ffff);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
+  text-align: center; /* Center text inside buttons */
+}
+.contact-button{
+  padding-top: 10px;
+  padding-right: 100px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.home-button:hover, .contact-button:hover {
+  opacity: 0.8;
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 40px; /* Space between left and right sections */
+  width: 100%;
+  margin-top: 60px; /* Space for buttons */
+}
+
+/* Left Section - Key Achievements */
+.left-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.achievements-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 80%;
+  position: relative;
+}
+
+.achievements-container::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ff00ff, #00ffff);
+}
+
+.achievement-card {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  width: 60%;
+}
+
+.achievement-card.left {
+  align-self: flex-start;
+  margin-left: 50px;
+}
+
+.achievement-card.right {
+  align-self: flex-end;
+  margin-right: 50px;
+}
+
+.achievement-card::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(to right, #ff00ff, #00ffff);
+  border-radius: 50%;
+  left: -27px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.achievement-icon {
+  font-size: 30px;
+  color: #00ffff;
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: #00ffff;
+}
+
+.achievement-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+/* Right Section - Skills Circle */
+.right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-container {
+  position: relative;
+  width: 400px; /* Circle size */
+  height: 400px; /* Circle size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill {
+  position: absolute;
+  color: #00ffff; /* Cyan text */
+  font-weight: bold;
+  font-size: 18px;
+  animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-container {
+      grid-template-columns: 1fr; /* Single column for smaller screens */
+      gap: 20px;
+  }
+
+  .achievements-container {
+      width: 100%;
+  }
+
+  .achievement-card {
+      width: 80%;
+  }
+
+  .achievement-card.left, .achievement-card.right {
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+
+  .skills-container {
+      width: 300px;
+      height: 300px;
+  }
+
+  .achievement-content h3 {
+      font-size: 20px;
+  }
+
+  .achievement-content p {
+      font-size: 14px;
+  }
+}

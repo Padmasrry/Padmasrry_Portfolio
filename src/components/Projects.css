@@ -1,0 +1,146 @@
+/* Projects.css */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  margin: 0;
+  min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.projects-page {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+/* Home Button */
+.home-button {
+  position: fixed; /* Fixed position for the Home button */
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ff00ff, #00ffff);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
+  z-index: 1000; /* Ensure the button is above other elements */
+}
+
+.home-button:hover {
+  opacity: 0.8;
+}
+
+h1 {
+  background: linear-gradient(to right, #ff00ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 80%;
+  position: relative;
+  padding-bottom: 50px; /* Add padding at the bottom for better scrolling */
+}
+
+.projects-container::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ff00ff, #00ffff);
+}
+
+.project-card {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  width: 60%;
+}
+
+.project-card.left {
+  align-self: flex-start;
+  margin-left: 50px;
+}
+
+.project-card.right {
+  align-self: flex-end;
+  margin-right: 50px;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(to right, #ff00ff, #00ffff);
+  border-radius: 50%;
+  left: -27px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.project-icon {
+  font-size: 30px;
+  color: #00ffff;
+}
+
+.project-content {
+  flex: 1;
+}
+
+.project-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: #00ffff;
+}
+
+.project-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects-container {
+      width: 90%;
+  }
+
+  .project-card {
+      width: 80%;
+  }
+
+  .project-card.left, .project-card.right {
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+
+  .projects-container::before {
+      left: 10px;
+  }
+
+  .project-card::before {
+      left: -22px;
+  }
+}
